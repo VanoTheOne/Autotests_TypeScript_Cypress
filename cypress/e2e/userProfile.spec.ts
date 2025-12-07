@@ -31,7 +31,7 @@ describe(`User profile page tests`, function () {
     it(`Should check if user Bio is changed`, () => {
       accountMenu.openUserProfile();
       profilePage.openEditProfilePage();
-      const newUserBio = `Playwright`;
+      const newUserBio = `Playwright123`;
       editProfilePage.changeUserBio(newUserBio);
       editProfilePage.backToUserProfile();
       profilePage.userBio.should('include.text', newUserBio);

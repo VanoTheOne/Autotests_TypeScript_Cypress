@@ -1,6 +1,7 @@
 import Base from './base';
 import Header from './header/header';
 import { env } from '../support/env';
+import { waitForDebugger } from 'inspector';
 
 export default class LoginPage extends Base {
   public header: Header;
