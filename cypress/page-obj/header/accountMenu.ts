@@ -6,39 +6,39 @@ export default class AccountMenu extends Base {
   }
 
   get accountMenuButton() {
-    return cy.xpath('//nav[@id="imdbHeader"]//div[contains (@class, "navbar__flyout--breakpoint-m")]//label[contains (@class, "navbar__user-menu-toggle__button")]');
+    return cy.get('#imdbHeader label.navbar__user-menu-toggle__button');
   }
 
   get accountMenuYourProfileButton() {
-    return cy.xpath('//nav[@id="imdbHeader"]//span[@id="navUserMenu-contents"]//span[contains (text(), "Your profile")]/..');
+    return cy.get('#navUserMenu-contents [href="/profile/?ref_=hm_nv_profile"]');
   }
 
   get accountMenuYourWatchlistButton() {
-    return cy.xpath('//nav[@id="imdbHeader"]//span[@id="navUserMenu-contents"]//span[contains (text(), "Your Watchlist")]/..');
+    return cy.get('#navUserMenu-contents [href="/list/watchlist/?ref_=hm_nv_wls"]');
   }
 
   get accountMenuYourRatingsButton() {
-    return cy.xpath('//nav[@id="imdbHeader"]//span[@id="navUserMenu-contents"]//span[contains (text(), "Your ratings")]/..');
+    return cy.get('#navUserMenu-contents [href="/list/ratings/?ref_=hm_nv_rat"]');
   }
 
   get accountMenuYourListsButton() {
-    return cy.xpath('//nav[@id="imdbHeader"]//span[@id="navUserMenu-contents"]//span[contains (text(), "Your lists")]/..');
+    return cy.get('#navUserMenu-contents [href="/profile/lists/?ref_=hm_nv_lst"]');
   }
 
   get accountMenuYourInterestsButton() {
-    return cy.xpath('//nav[@id="imdbHeader"]//span[@id="navUserMenu-contents"]//span[contains (text(), "Your interests")]/..');
+    return cy.get('#navUserMenu-contents [href="/list/interests/?ref_=hm_nv_in"]');
   }
 
   get accountMenuYourWatchHistoryButton() {
-    return cy.xpath('//nav[@id="imdbHeader"]//span[@id="navUserMenu-contents"]//span[contains (text(), "Your watch history")]/..');
+    return cy.get('#navUserMenu-contents [href="/list/watchhistory/?ref_=hm_nv_wtchd"]');
   }
 
   get accountMenuAccountSettingsButton() {
-    return cy.xpath('//nav[@id="imdbHeader"]//span[@id="navUserMenu-contents"]//span[contains (text(), "Account settings")]/..');
+    return cy.get('#navUserMenu-contents [href="/registration/accountsettings/?ref_=hm_nv_pers"]');
   }
 
   get accountMenuSignOutButton() {
-    return cy.xpath('//nav[@id="imdbHeader"]//span[@id="navUserMenu-contents"]//span[contains (text(), "Sign out")]/..');
+    return cy.get('#navUserMenu-contents [href="/registration/logout/?u=%2F&ref_=hm_nv_lgout"]');
   }
 
   openUserProfile() {

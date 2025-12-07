@@ -6,19 +6,19 @@ export default class ProfilePage extends Base {
   }
 
   get editProfileButton() {
-    return cy.xpath('//div[@data-testid="up-header"]//a[contains (@class, "ipc-btn ipc-btn--single-padding")]');
+    return cy.xpath('[data-testid="up-header"] a');
   }
 
   get userBio() {
-    return cy.xpath('//div[@data-testid="up-header"]//div[@class="ipc-html-content-inner-div"]');
+    return cy.xpath('[data-testid="up-header"] div.ipc-html-content-inner-div');
   }
 
   get exploreBadgesButton() {
-    return cy.xpath('//section[@data-testid="user-badges-feature"]//a[@data-testid="bdg-shoveler-cta"]');
+    return cy.xpath('[data-testid="user-badges-feature"] [data-testid="bdg-shoveler-cta"]');
   }
 
   get settingsButton() {
-    return cy.xpath('//div[@data-testid="up-header"]//button[@title="Settings"]');
+    return cy.xpath('[data-testid="up-header"] [title="Settings"]');
   }
 
   openEditProfilePage() {

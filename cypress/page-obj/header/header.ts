@@ -6,31 +6,31 @@ export default class Header extends Base {
   }
 
   get signInButton() {
-    return cy.xpath('//nav[@id="imdbHeader"]//a[@class="ipc-btn ipc-btn--single-padding ipc-btn--center-align-content ipc-btn--default-height ipc-btn--core-baseAlt ipc-btn--theme-baseAlt ipc-btn--button-radius imdb-header__signin-text"]');
+    return cy.get('#imdbHeader div.nav__userMenu a.imdb-header__signin-text');
   }
 
   get watchlistButton() {
-    return cy.xpath('//nav[@id="imdbHeader"]//div[@class="sc-196567ac-0 fClFUt imdb-header__watchlist-button"]/a');
+    return cy.get('#imdbHeader div.imdb-header__watchlist-button a');
   }
 
   get searchInput() {
-    return cy.xpath('//div[@id="suggestion-search-container"]//input[@type="text"]');
+    return cy.get('#suggestion-search-container input[type="text"]');
   }
 
   get searchButton() {
-    return cy.xpath('//nav[@id="imdbHeader"]//button[@id="suggestion-search-button"]');
+    return cy.get('#imdbHeader #suggestion-search-button');
   }
 
   get searchResult() {
-    return cy.xpath('//li[@class="ipc-metadata-list-summary-item"]').first();
+    return cy.get('[data-testid="find-results-section-title"] li').first();
   }
 
   get menuButton() {
-    return cy.xpath('//nav[@id="imdbHeader"]//label[@id="imdbHeader-navDrawerOpen"]');
+    return cy.get('#imdbHeader #imdbHeader-navDrawerOpen');
   }
 
   get closeMenuButton() {
-    return cy.xpath('//div[@class="drawer__panelHeader"]//label[@for="imdbHeader-navDrawer"]');
+    return cy.get('div[data-testid="panel-header"] label[for="imdbHeader-navDrawer"]');
   }
 
   openWatchlist() {

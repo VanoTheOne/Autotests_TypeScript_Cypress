@@ -11,23 +11,23 @@ export default class LoginPage extends Base {
   }
 
   get signInWithIMDbButton() {
-    return cy.xpath('//div[@class="display-button-container"]//a[@data-testid="sign_in_option_IMDB"]');
+    return cy.get('div[data-testid="sign_in_content_sign_in"] a[data-testid="sign_in_option_IMDB"]');
   }
 
   get emailInputField() {
-    return cy.xpath('//div[@class="a-box"]//input[@type="email"]');
+    return cy.get('input[type="email"]');
   }
 
   get passwordInputField() {
-    return cy.xpath('//div[@class="a-box"]//input[@type="password"]');
+    return cy.get('input[type="password"]');
   }
 
   get signInButton() {
-    return cy.xpath('//div[@class="a-box"]//input[@id="signInSubmit"]');
+    return cy.get('#signInSubmit');
   }
 
   get signInToExistingAccountButton() {
-    return cy.xpath('//div[@data-testid="sign_in_container"]//button[@data-testid="navigate_to_sign_in_button"]');
+    return cy.get('div[data-testid="sign_in_content_main"] button[data-testid="navigate_to_sign_in_button"]');
   }
 
   logInUser() {

@@ -6,50 +6,50 @@ export default class EditProfilePage extends Base {
   }
 
   get editUsernameButton() {
-    return cy.xpath('//div[@data-testid="user-info-username"]//button[@data-testid="user-info-edit"]');
+    return cy.xpath('[data-testid="user-info-username"] [data-testid="user-info-edit"]');
   }
 
   get editUserBioButton() {
-    return cy.xpath('//div[@data-testid="user-info-bio"]//button[@data-testid="user-info-edit"]');
+    return cy.xpath('[data-testid="user-info-bio"] [data-testid="user-info-edit"]');
   }
 
   get uploadImageButton() {
-    return cy.xpath('//div[@data-testid="upe-image-editor-section"]//button[@data-testid="upe-image-select-uploadBtn"]');
+    return cy.xpath('[data-testid="upe-image-select-fileInput"]');
   }
 
-  get usernameField() {
-    return cy.xpath('//div[@class="ipc-promptable-base__content"]//input[@name="username-edit"]');
+  get usernameInputField() {
+    return cy.xpath('#text-input__0');
   }
 
-  get userBioField() {
-    return cy.xpath('//div[@data-testid="promptable__pc"]//textarea[@id="textarea__0"]');
+  get userBioInputField() {
+    return cy.xpath('#textarea__0');
   }
 
   get saveChangesButton() {
-    return cy.xpath('//div[@class="ipc-promptable-base__content"]//button[@data-testid="prompt-saveButton"]');
+    return cy.xpath('[data-testid="prompt-saveButton"]');
   }
 
   get backButton() {
-    return cy.xpath('//div[@data-testid="edit-header"]//a[@data-testid="edit-header-back"]');
+    return cy.xpath('[data-testid="edit-header"] [data-testid="edit-header-back"]');
   }
 
   get editUsernameDialog() {
-    return cy.xpath('div[role="dialog"]');
+    return cy.xpath('[role="dialog"]');
   }
 
   changeUsername(newUsername: string) {
     this.editUsernameButton.click();
-    this.usernameField.click();
-    this.usernameField.clear();
-    this.usernameField.type(newUsername);
+    this.usernameInputField.click();
+    this.usernameInputField.clear();
+    this.usernameInputField.type(newUsername);
     this.saveChangesButton.click();
   }
 
   changeUserBio(newUserBio: string) {
     this.editUserBioButton.click();
-    this.userBioField.click();
-    this.userBioField.clear();
-    this.userBioField.type(newUserBio);
+    this.userBioInputField.click();
+    this.userBioInputField.clear();
+    this.userBioInputField.type(newUserBio);
     this.saveChangesButton.click();
   }
 
